@@ -1,0 +1,62 @@
+name: 'threatcl'
+description: 'An action to run threatcl commands in your GitHub Workflows'
+author: 'Christian @xntrik Frichot'
+inputs:
+  command:
+    description: 'What threatcl command to run - either validate, dashboard, export or dfd'
+    required: true
+    default: 'validate'
+  files:
+    description: 'files to process with threatcl'
+    required: true
+    default: '*'
+  outdir:
+    description: 'outdir, used with dashboard command'
+    required: false
+  dashboard-template:
+    description: 'dashboard-template, used with the dashboard command'
+    required: false
+    default: ''
+  dashboard-filename:
+    description: 'dashboard-filename, used with the dashboard command'
+    required: false
+    default: ''
+  dashboard-html:
+    description: 'dashboard-html, used with the dashboard command. Must be a string of true or false'
+    required: false
+    default: 'false'
+  threatmodel-template:
+    description: 'threatmodel-template, used with the dashboard command'
+    required: false
+    default: ''
+  dfd-type:
+    description: 'dfd-type, used with the dfd command. Must be a string of png, svg or dot. We default to PNG output'
+    required: false
+    default: 'png'
+  outext:
+    description: 'outext, used with the dashboard command to pass the -out-ext flag'
+    required: false
+    default: ''
+  export-format:
+    description: "export-format, used with the export command to pass the -format flag"
+    required: false
+    default: 'json'
+  export-output:
+    description: "export-output, used with the export command to pass the -output flag"
+    required: false
+    default: 'output.json'
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/threatcl/threatcl-action:v0.0.1'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.files }}
+    - ${{ inputs.outdir }}
+    - ${{ inputs.dashboard-template }}
+    - ${{ inputs.dashboard-filename }}
+    - ${{ inputs.dashboard-html }}
+    - ${{ inputs.threatmodel-template }}
+    - ${{ inputs.dfd-type }}
+    - ${{ inputs.outext }}
+    - ${{ inputs.export-format }}
+    - ${{ inputs.export-output }}
