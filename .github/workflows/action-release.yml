@@ -40,7 +40,7 @@ jobs:
           flavor: |
             latest=true
 
-      - name: Build docker image but no push
+      - name: Build docker image and push
         uses: docker/build-push-action@v5
         with:
           context: .
