@@ -1,5 +1,5 @@
 name: 'threatcl'
-description: 'An action to run threatcl commands in your GitHub Workflows'
+description: 'An action to run threatcl commands in your GitHub workflows'
 author: 'Christian @xntrik Frichot'
 inputs:
   command:
