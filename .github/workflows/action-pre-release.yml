@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 env:
-  REGISTERY: ghcr.io
+  REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
