@@ -161,13 +161,14 @@ There are a few steps involved in updating the github action.
 After you've updated any contents in the [Dockerfile](Dockerfile) or [entrypoint.sh](entrypoint.sh), you'll need to re-build the image, and push it to Docker hub. To do this:
 
 1. Update the `VERSION` in the [Makefile](Makefile) and the image tag in the [Dockerfile](Dockerfile) < particularly if this is for a new threatcl version
-2. Build and push the new docker image: `$ make imagepush`
+2. Merge this into `main` and see if the `pre-release` action runs. The image should be built correctly, but not pushed into ghcr.
 3. Update the image docker version referenced in [action.yml](action.yml)
 4. Update the [CHANGELOG.md](CHANGELOG.md)
 5. Update the version number references and examples in the [README.md](README.md)
-6. Git push these updates to `main` branch
+6. Git push these updates to `main` branch as well
 7. Tag the repo with the new version: `$ git tag -a v0.0.x -m 'v0.0.x' && git push origin --tags`
-8. Tag the repo with the `latest` tag: `$ git tag -f latest && git push --force origin latest`
+8. This should run the `release` action, which should build and push the image into ghcr
+9. (I don't think we need to do this anymore ) Tag the repo with the `latest` tag: `$ git tag -f latest && git push --force origin latest`
 9. Make sure you update the examples in https://github.com/threatcl/threatcl-action-example
 
 ## License
