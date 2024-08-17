@@ -139,7 +139,7 @@ You can see a working example of this workflow at [threatcl-actions-example](htt
 | `dashboard-html` | For the `dashboard` mode, allows you to specify whether the output is html. Needs to be `true` or `false` | `false` | N |
 | `threatmodel-template` | For the `dashboard` mode, allows you to specify a threatmodel template file | | N |
 | `dfd-type` | For the `dfd` mode, allows you to set the output type. Needs to be `png`, `svg`, or `dot` | `png` | N |
-| `export-format` | For the `export` mode, allows you to set the export format. Needs to be `json`, or `otm` | `json` | N |
+| `export-format` | For the `export` mode, allows you to set the export format. Needs to be `json`, `hcl`, or `otm` | `json` | N |
 | `export-output` | For the `export` mode, allows you to set where the exported file is saved. | | N |
 
 ## Event Triggers

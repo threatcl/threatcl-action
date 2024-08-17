@@ -1,5 +1,5 @@
 DOCKERNAME=ghcr.io/threatcl/threatcl-action
-VERSION=v0.0.1
+VERSION=v0.0.2
 
 default: help
 

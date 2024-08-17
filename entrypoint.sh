@@ -60,6 +60,10 @@ then
   then
     additionaloptions="-format=otm"
   fi
+  if [ "${10}" = "hcl" ]
+  then
+    additionaloptions="-format=hcl"
+  fi
 
   bash -c "set -e; set -o pipefail; threatcl export -overwrite -output=${11} $additionaloptions $2"
 fi
