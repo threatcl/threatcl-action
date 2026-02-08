@@ -1,3 +1,10 @@
+## 0.0.5
+### Feb 8, 2026
+
+CHANGES:
+
+* Bugfix in the entrypoint
+
 ## 0.0.4
 ### Feb 8, 2026
 

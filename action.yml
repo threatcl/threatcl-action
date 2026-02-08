@@ -63,7 +63,7 @@ inputs:
     default: 'https://api.threatcl.com'
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/threatcl/threatcl-action:v0.0.4'
+  image: 'docker://ghcr.io/threatcl/threatcl-action:v0.0.5'
   env:
     THREATCL_API_TOKEN: ${{ inputs.cloud-token }}
     THREATCL_CLOUD_ORG: ${{ inputs.cloud-org }}
