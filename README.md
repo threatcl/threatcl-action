@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl validate
-        uses: threatcl/threatcl-action@v0.0.3
+        uses: threatcl/threatcl-action@v0.0.4
         with:
           command: 'validate'
           files: './hcl-files/*'
@@ -47,12 +47,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl validate
-        uses: threatcl/threatcl-action@v0.0.3
+        uses: threatcl/threatcl-action@v0.0.4
         with:
           command: 'validate'
           files: './hcl-files/*'
       - name: threatcl dashboard
-        uses: threatcl/threatcl-action@v0.0.3
+        uses: threatcl/threatcl-action@v0.0.4
         with:
           command: 'dashboard'
           files: './hcl-files/*'
@@ -87,7 +87,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl DFD
-        uses: threatcl/threatcl-action@v0.0.3
+        uses: threatcl/threatcl-action@v0.0.4
         with:
           command: 'dfd'
           files: './hcl-files/*'
@@ -115,7 +115,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl export
-        uses: threatcl/threatcl-action@v0.0.3
+        uses: threatcl/threatcl-action@v0.0.4
         with:
           command: 'export'
           files: './hcl-files/*'
@@ -130,7 +130,7 @@ You can see a working example of this workflow at [threatcl-actions-example](htt
 
 | Parameter | Description | Default | Required |
 | --------- | ----------- | ------- | -------- |
-| `command` | This is the `threatcl` command to execute. Needs to be `validate`, `dashboard`, `export`, or `dfd` | `validate` | Y |
+| `command` | This is the `threatcl` command to execute. Needs to be `validate`, `dashboard`, `export`, `dfd`, or `cloud` | `validate` | Y |
 | `files` | This is the location of files in the repo to parse with `threatcl` | `*` | Y |
 | `outdir` | For the `dashboard` or `dfd` mode, this is required, and is where the generated output will be written | | N |
 | `outext` | For the `dashboard` mode, allows you to specify the extension of generated files | | N |
@@ -141,6 +141,10 @@ You can see a working example of this workflow at [threatcl-actions-example](htt
 | `dfd-type` | For the `dfd` mode, allows you to set the output type. Needs to be `png`, `svg`, or `dot` | `png` | N |
 | `export-format` | For the `export` mode, allows you to set the export format. Needs to be `json`, `hcl`, or `otm` | `json` | N |
 | `export-output` | For the `export` mode, allows you to set where the exported file is saved. | | N |
+| `cloud-command` | For the `cloud` mode, allows you to specify the cloud sub-command | `validate` | N |
+| `cloud-token` | For the `cloud` mode, this is required to authenticate to Threatcl Cloud | | N |
+| `cloud-org` | For the `cloud` mode, this is required to identify the default org (by id to use) | | N |
+| `cloud-api-url` | For the `cloud` mode, this allows you to override the API url | `https://api.threatcl.com` | N |
 
 ## Event Triggers
 
@@ -151,7 +155,7 @@ The GitHub Actions framework allows you to trigger this (and other) actions on _
 The latest updates will always be tagged `latest`. See [CHANGELOG.md](CHANGELOG.md) for previous releases. The current version is:
 
 ```yaml
-- uses: threatcl/threatcl-action:v0.0.3
+- uses: threatcl/threatcl-action:v0.0.4
 ```
 
 ## Releasing
