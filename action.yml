@@ -3,7 +3,7 @@ description: 'An action to run threatcl commands in your GitHub workflows'
 author: 'Christian @xntrik Frichot'
 inputs:
   command:
-    description: 'What threatcl command to run - either validate, dashboard, export or dfd'
+    description: 'What threatcl command to run - either validate, dashboard, export, dfd, or cloud'
     required: true
     default: 'validate'
   files:
@@ -45,6 +45,10 @@ inputs:
     description: "export-output, used with the export command to pass the -output flag"
     required: false
     default: 'output.json'
+  cloud-command:
+    description: "cloud-command, used with the cloud command, to specify which sub-command to run. Currently only supports 'validate'"
+    required: false
+    default: 'validate'
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/threatcl/threatcl-action:v0.0.2'
@@ -60,3 +64,4 @@ runs:
     - ${{ inputs.outext }}
     - ${{ inputs.export-format }}
     - ${{ inputs.export-output }}
+    - ${{ inputs.cloud-command }}
