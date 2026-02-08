@@ -11,6 +11,23 @@ then
   then
     echo ">>>> Running cloud validate"
     bash -c "set -e; set -o pipefail; threatcl cloud validate $2"
+  elif [ "${12}" = "push" ]
+  then
+    echo ">>>> Running cloud push"
+    additionaloptions=""
+    if [ "${13}" = "true" ]
+    then
+      additionaloptions="${additionaloptions} -no-create=true"
+    fi
+    if [ "${14}" = "true" ]
+    then
+      additionaloptions="${additionaloptions} -no-update-local=true"
+    fi
+    if [ "${15}" = "true" ]
+    then
+      additionaloptions="${additionaloptions} -ignore-linked-controls=true"
+    fi
+    bash -c "set -e; set -o pipefail; threatcl cloud push $additionaloptions $2"
   fi
 elif [ $1 = "validate" ]
 then

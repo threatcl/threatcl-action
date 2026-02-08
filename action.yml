@@ -46,7 +46,7 @@ inputs:
     required: false
     default: 'output.json'
   cloud-command:
-    description: "cloud-command, used with the cloud command, to specify which sub-command to run. Currently only supports 'validate'"
+    description: "cloud-command, used with the cloud command, to specify which sub-command to run. Currently only supports 'validate', and 'push'"
     required: false
     default: 'validate'
   cloud-token:
@@ -61,6 +61,18 @@ inputs:
     description: 'cloud-api-url, the API URL for threatcl cloud commands'
     required: false
     default: 'https://api.threatcl.com'
+  cloud-push-no-create:
+    description: 'If pushing, and the model doesnt exist, dont create it'
+    required: false
+    default: 'false'
+  cloud-push-no-update-local:
+    description: 'If pushing, and a new model is created, dont update this hcl with the model link'
+    required: false
+    default: 'false'
+  cloud-push-ignore-linked-controls:
+    description: 'If pushing, dont attempt to link controls to reference threats from the control library during upload'
+    required: false
+    default: 'false'
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/threatcl/threatcl-action:v0.0.5'
@@ -81,3 +93,6 @@ runs:
     - ${{ inputs.export-format }}
     - ${{ inputs.export-output }}
     - ${{ inputs.cloud-command }}
+    - ${{ inputs.cloud-push-no-create }}
+    - ${{ inputs.cloud-push-no-update-local }}
+    - ${{ inputs.cloud-push-ignore-linked-controls }}
