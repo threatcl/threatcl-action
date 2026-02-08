@@ -5,7 +5,14 @@ echo ">>> Starting threatcl-action"
 echo ">>> threatcl version"
 bash -c "set -e; set -o pipefail; threatcl --version"
 echo ""
-if [ $1 = "validate" ]
+if [ $1 = "cloud" ]
+then
+  if [ "$12" = "validate" ]
+  then
+    echo ">>>> Running cloud validate"
+    bash -c "set -e; set -o pipefail; threatcl cloud validate $2"
+  fi
+elif [ $1 = "validate" ]
 then
   echo ">>>> Running validate"
   bash -c "set -e;  set -o pipefail; threatcl validate $2"
