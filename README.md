@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl validate
-        uses: threatcl/threatcl-action@v0.0.2
+        uses: threatcl/threatcl-action@v0.0.3
         with:
           command: 'validate'
           files: './hcl-files/*'
@@ -47,12 +47,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl validate
-        uses: threatcl/threatcl-action@v0.0.2
+        uses: threatcl/threatcl-action@v0.0.3
         with:
           command: 'validate'
           files: './hcl-files/*'
       - name: threatcl dashboard
-        uses: threatcl/threatcl-action@v0.0.2
+        uses: threatcl/threatcl-action@v0.0.3
         with:
           command: 'dashboard'
           files: './hcl-files/*'
@@ -87,7 +87,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl DFD
-        uses: threatcl/threatcl-action@v0.0.2
+        uses: threatcl/threatcl-action@v0.0.3
         with:
           command: 'dfd'
           files: './hcl-files/*'
@@ -115,7 +115,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: threatcl export
-        uses: threatcl/threatcl-action@v0.0.2
+        uses: threatcl/threatcl-action@v0.0.3
         with:
           command: 'export'
           files: './hcl-files/*'
@@ -151,7 +151,7 @@ The GitHub Actions framework allows you to trigger this (and other) actions on _
 The latest updates will always be tagged `latest`. See [CHANGELOG.md](CHANGELOG.md) for previous releases. The current version is:
 
 ```yaml
-- uses: threatcl/threatcl-action:v0.0.2
+- uses: threatcl/threatcl-action:v0.0.3
 ```
 
 ## Releasing
