@@ -1,3 +1,10 @@
+## 0.0.6
+### Feb 8, 2026
+
+CHANGES:
+
+* Added cloud push command
+
 ## 0.0.5
 ### Feb 8, 2026
 
