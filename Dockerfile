@@ -1,4 +1,4 @@
-FROM ghcr.io/threatcl/threatcl:v0.4.0
+FROM ghcr.io/threatcl/threatcl:v0.4.1
 USER root
 RUN apk update && apk add --no-cache bash
 USER threatcl

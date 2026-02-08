@@ -49,9 +49,25 @@ inputs:
     description: "cloud-command, used with the cloud command, to specify which sub-command to run. Currently only supports 'validate'"
     required: false
     default: 'validate'
+  cloud-token:
+    description: 'cloud-token, the API token used for threatcl cloud authentication'
+    required: false
+    default: ''
+  cloud-org:
+    description: 'cloud-org, the organization for threatcl cloud commands'
+    required: false
+    default: ''
+  cloud-api-url:
+    description: 'cloud-api-url, the API URL for threatcl cloud commands'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/threatcl/threatcl-action:v0.0.3'
+  env:
+    THREATCL_API_TOKEN: ${{ inputs.cloud-token }}
+    THREATCL_CLOUD_ORG: ${{ inputs.cloud-org }}
+    THREATCL_API_URL: ${{ inputs.cloud-api-url }}
   args:
     - ${{ inputs.command }}
     - ${{ inputs.files }}
