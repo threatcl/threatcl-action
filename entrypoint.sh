@@ -7,7 +7,7 @@ bash -c "set -e; set -o pipefail; threatcl --version"
 echo ""
 if [ $1 = "cloud" ]
 then
-  if [ "$12" = "validate" ]
+  if [ "${12}" = "validate" ]
   then
     echo ">>>> Running cloud validate"
     bash -c "set -e; set -o pipefail; threatcl cloud validate $2"
