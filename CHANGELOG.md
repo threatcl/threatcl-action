@@ -1,3 +1,11 @@
+## 0.0.7
+
+### May 30, 2026
+
+CHANGES:
+
+* Bumped to threatcl 0.4.12
+
 ## 0.0.6
 ### Feb 8, 2026
 
